@@ -44,6 +44,7 @@ else()
 
             data_structures/stack.h data_structures/stack.cpp
             data_structures/linked_list.h data_structures/linked_list.cpp
+            data_structures/binary_tree.h data_structures/binary_tree.cpp
 
         )
     endif()

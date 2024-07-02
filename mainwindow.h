@@ -20,6 +20,8 @@ public:
 private slots:
     void on_linked_list_test_button_clicked();
 
+    void on_binary_tree_test_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

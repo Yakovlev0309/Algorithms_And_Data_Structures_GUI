@@ -1,8 +1,10 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "data_structures/linked_list.h"
 
 #include <QDebug>
+
+#include "data_structures/linked_list.h"
+#include "data_structures/binary_tree.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -43,4 +45,15 @@ void MainWindow::on_linked_list_test_button_clicked()
     print_container(l.to_array(), l.size());
     l.append_back(926535);
     print_container(l.to_array(), l.size(), typeid(l).name());
+}
+
+void MainWindow::on_binary_tree_test_button_clicked()
+{
+    BinaryTree<int> t;
+    t.add_node(5);
+    t.add_node(3);
+    t.add_node(8);
+    t.add_node(2);
+    // print_container(t.to_array(), t.size(), typeid(t).name());
+    t.print_nodes_preorder();
 }
