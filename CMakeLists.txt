@@ -19,6 +19,9 @@ set(PROJECT_SOURCES
         mainwindow.ui
 )
 
+# include_directories(${CMAKE_CURRENT_BINARY_DIR}/data_structures)
+# include_directories(${CMAKE_CURRENT_BINARY_DIR}/algorithms)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Algorithms_And_Data_Structures_GUI
         MANUAL_FINALIZATION
@@ -38,6 +41,10 @@ else()
     else()
         add_executable(Algorithms_And_Data_Structures_GUI
             ${PROJECT_SOURCES}
+
+            data_structures/stack.h data_structures/stack.cpp
+            data_structures/linked_list.h data_structures/linked_list.cpp
+
         )
     endif()
 endif()
