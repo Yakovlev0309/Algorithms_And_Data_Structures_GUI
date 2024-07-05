@@ -29,10 +29,17 @@ public:
     void append_before(LinkedListNode<T>* next, const T& value);
     void append_by_index(size_t index, const T& value);
 
-    T* to_array();
+    void remove_back();
+    void remove_front();
 
-    size_t size() { return sz; }
-    LinkedListNode<T>* head() { return _head; }
+    void clear();
+
+    size_t size() const { return sz; }
+    bool is_empty() const { return sz > 0 ? false : true; };
+    bool contains(const T& value) const;
+    LinkedListNode<T>* head() const { return _head; }
+
+    T* to_array() const;
 
 private:
     LinkedListNode<T>* _head;

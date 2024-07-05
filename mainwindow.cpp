@@ -5,6 +5,7 @@
 
 #include "data_structures/linked_list.h"
 #include "data_structures/binary_tree.h"
+#include "data_structures/stack.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -45,6 +46,12 @@ void MainWindow::on_linked_list_test_button_clicked()
     print_container(l.to_array(), l.size());
     l.append_back(926535);
     print_container(l.to_array(), l.size(), typeid(l).name());
+    l.remove_back();
+    print_container(l.to_array(), l.size(), typeid(l).name());
+    qDebug() << "contains 3 =" << l.contains(3);
+    l.remove_front();
+    print_container(l.to_array(), l.size(), typeid(l).name());
+    qDebug() << "contains 3 =" << l.contains(3);
 }
 
 void MainWindow::on_binary_tree_test_button_clicked()
@@ -56,4 +63,31 @@ void MainWindow::on_binary_tree_test_button_clicked()
     t.add_node(2);
     // print_container(t.to_array(), t.size(), typeid(t).name());
     t.print_nodes_preorder();
+}
+
+#include <typeinfo>
+
+void MainWindow::on_stack_test_button_clicked()
+{
+    Stack<int> s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+    s.push(5);
+    qDebug() << "is empty =" << s.is_empty();
+    print_container(s.to_array(), s.size(), typeid(s).name());
+    qDebug() << "contains 5 =" << s.contains(5);
+    s.pop();
+    print_container(s.to_array(), s.size(), typeid(s).name());
+    qDebug() << "contains 5 =" << s.contains(5);
+    qDebug() << "top element =" << s.peek();
+
+    while (s.size() > 0)
+    {
+        s.pop();
+    }
+    qDebug() << "is empty =" << s.is_empty();
+    print_container(s.to_array(), s.size(), (typeid(s).name()));
+    qDebug() << "top element =" << s.peek();
 }

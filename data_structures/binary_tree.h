@@ -19,23 +19,23 @@ class BinaryTree
 public:
     BinaryTree();
 
-    void traceroute_recursive_preorder(BinaryTreeNode<T> *node);
-    void print_nodes_preorder();
-    void traceroute_recursive_inorder(BinaryTreeNode<T> *node);
-    void print_nodes_inorder();
-    void traceroute_recursive_postorder(BinaryTreeNode<T> *node);
-    void print_nodes_postorder();
+    void traceroute_recursive_preorder(BinaryTreeNode<T> *node) const;
+    void print_nodes_preorder() const;
+    void traceroute_recursive_inorder(BinaryTreeNode<T> *node) const;
+    void print_nodes_inorder() const;
+    void traceroute_recursive_postorder(BinaryTreeNode<T> *node) const;
+    void print_nodes_postorder() const;
 
     void add_node(T value);
     void remove_node(T value);
 
-    void traceroute_node(T value);
-    bool contains(T value);
+    void traceroute_node(T value) const;
+    bool contains(T value) const;
 
 private:
     void add_node(T value, BinaryTreeNode<T> *parent);
-    void traceroute_node(T value, BinaryTreeNode<T> *parent);
-    bool contains(T value, BinaryTreeNode<T> *parent);
+    void traceroute_node(T value, BinaryTreeNode<T> *parent) const;
+    bool contains(T value, BinaryTreeNode<T> *parent) const;
 
 private:
     BinaryTreeNode<T> *root;

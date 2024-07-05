@@ -40,6 +40,19 @@
      <string>BinaryTree test</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="stack_test_button">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>310</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stack test</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

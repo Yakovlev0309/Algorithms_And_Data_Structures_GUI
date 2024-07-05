@@ -17,7 +17,7 @@ BinaryTree<T>::BinaryTree()
 }
 
 template <typename T>
-void BinaryTree<T>::traceroute_recursive_preorder(BinaryTreeNode<T> *node)
+void BinaryTree<T>::traceroute_recursive_preorder(BinaryTreeNode<T> *node) const
 {
     if (node != nullptr)
     {
@@ -28,13 +28,13 @@ void BinaryTree<T>::traceroute_recursive_preorder(BinaryTreeNode<T> *node)
 }
 
 template <typename T>
-void BinaryTree<T>::print_nodes_preorder()
+void BinaryTree<T>::print_nodes_preorder() const
 {
     traceroute_recursive_preorder(root);
 }
 
 template <typename T>
-void BinaryTree<T>::traceroute_recursive_inorder(BinaryTreeNode<T> *node)
+void BinaryTree<T>::traceroute_recursive_inorder(BinaryTreeNode<T> *node) const
 {
     if (node != nullptr)
     {
@@ -45,13 +45,13 @@ void BinaryTree<T>::traceroute_recursive_inorder(BinaryTreeNode<T> *node)
 }
 
 template <typename T>
-void BinaryTree<T>::print_nodes_inorder()
+void BinaryTree<T>::print_nodes_inorder() const
 {
     traceroute_recursive_inorder(root);
 }
 
 template <typename T>
-void BinaryTree<T>::traceroute_recursive_postorder(BinaryTreeNode<T> *node)
+void BinaryTree<T>::traceroute_recursive_postorder(BinaryTreeNode<T> *node) const
 {
     if (node != nullptr)
     {
@@ -62,7 +62,7 @@ void BinaryTree<T>::traceroute_recursive_postorder(BinaryTreeNode<T> *node)
 }
 
 template <typename T>
-void BinaryTree<T>::print_nodes_postorder()
+void BinaryTree<T>::print_nodes_postorder() const
 {
     traceroute_recursive_postorder(root);
 }
@@ -108,13 +108,13 @@ void BinaryTree<T>::add_node(T value, BinaryTreeNode<T> *parent)
 }
 
 template <typename T>
-void BinaryTree<T>::traceroute_node(T value)
+void BinaryTree<T>::traceroute_node(T value) const
 {
     traceroute_node(value, root);
 }
 
 template <typename T>
-void BinaryTree<T>::traceroute_node(T value, BinaryTreeNode<T> *parent)
+void BinaryTree<T>::traceroute_node(T value, BinaryTreeNode<T> *parent) const
 {
     if (parent == nullptr)
     {
@@ -137,13 +137,13 @@ void BinaryTree<T>::traceroute_node(T value, BinaryTreeNode<T> *parent)
 }
 
 template <typename T>
-bool BinaryTree<T>::contains(T value)
+bool BinaryTree<T>::contains(T value) const
 {
     return contains(value, root);
 }
 
 template <typename T>
-bool BinaryTree<T>::contains(T value, BinaryTreeNode<T> *parent)
+bool BinaryTree<T>::contains(T value, BinaryTreeNode<T> *parent) const
 {
     if (parent == nullptr)
     {

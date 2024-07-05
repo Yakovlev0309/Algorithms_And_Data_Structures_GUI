@@ -152,7 +152,68 @@ void LinkedList<T>::append_by_index(size_t index, const T& value)
 }
 
 template <typename T>
-T* LinkedList<T>::to_array()
+void LinkedList<T>::remove_back()
+{
+    if (sz > 0)
+    {
+        LinkedListNode<T>* current = _head;
+        for (size_t i = 0; i < sz - 1; ++i)
+        {
+            current = current->next;
+        }
+
+        delete current->next;
+        current->next = nullptr;
+
+        sz -= 1;
+    }
+}
+
+template <typename T>
+void LinkedList<T>::remove_front()
+{
+    if (sz > 0)
+    {
+        LinkedListNode<T>* next = _head->next;
+        delete _head;
+        _head = next;
+
+        sz -= 1;
+    }
+}
+
+template <typename T>
+void LinkedList<T>::clear()
+{
+    if (sz > 0)
+    {
+        LinkedListNode<T>* current = _head;
+        for (size_t i = 0; i < sz; ++i)
+        {
+
+        }
+
+        sz = 0;
+    }
+}
+
+template <typename T>
+bool LinkedList<T>::contains(const T &value) const
+{
+    LinkedListNode<T>* current = _head;
+    while (current->next != nullptr)
+    {
+        if (current->value == value)
+        {
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
+
+template <typename T>
+T* LinkedList<T>::to_array() const
 {
     T* arr = new T[sz];
     LinkedListNode<T>* current = _head;
