@@ -24,6 +24,12 @@ private slots:
 
     void on_stack_test_button_clicked();
 
+    void on_bubble_sort_test_button_clicked();
+
+    void on_selection_sort_test_button_clicked();
+
+    void on_quick_sort_test_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -7,6 +7,8 @@
 #include "data_structures/binary_tree.h"
 #include "data_structures/stack.h"
 
+#include "algorithms/sortings.hpp"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -90,4 +92,34 @@ void MainWindow::on_stack_test_button_clicked()
     qDebug() << "is empty =" << s.is_empty();
     print_container(s.to_array(), s.size(), (typeid(s).name()));
     qDebug() << "top element =" << s.peek();
+}
+
+void MainWindow::on_bubble_sort_test_button_clicked()
+{
+    int* arr = new int[]{5, 2, 6, 1, 8, 2, 9, 11};
+    int size = 8;
+    print_container(arr, size);
+    Sortings::bubble_sort(arr, size);
+    print_container(arr, size);
+    delete[] arr;
+}
+
+void MainWindow::on_selection_sort_test_button_clicked()
+{
+    int* arr = new int[]{5, 2, 6, 1, 8, 2, 9, 11};
+    int size = 8;
+    print_container(arr, size);
+    Sortings::selection_sort(arr, size);
+    print_container(arr, size);
+    delete[] arr;
+}
+
+void MainWindow::on_quick_sort_test_button_clicked()
+{
+    int* arr = new int[]{5, 2, 6, 1, 8, 2, 9, 11};
+    int size = 8;
+    print_container(arr, size);
+    Sortings::quick_sort(arr, size);
+    print_container(arr, size);
+    delete[] arr;
 }

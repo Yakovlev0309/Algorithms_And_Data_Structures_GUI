@@ -42,5 +42,4 @@ private:
     BinaryTreeNode<T> *current;
 };
 
-
 #endif // BINARYTREE_H

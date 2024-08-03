@@ -53,6 +53,45 @@
      <string>Stack test</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="bubble_sort_test_button">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>80</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bubble sort test</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="selection_sort_test_button">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>80</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Selection sort test</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="quick_sort_test_button">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>80</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quick sort test</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
