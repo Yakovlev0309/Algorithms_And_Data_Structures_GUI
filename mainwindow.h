@@ -30,6 +30,10 @@ private slots:
 
     void on_quick_sort_test_button_clicked();
 
+    void on_linear_search_test_button_clicked();
+
+    void on_binary_search_test_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

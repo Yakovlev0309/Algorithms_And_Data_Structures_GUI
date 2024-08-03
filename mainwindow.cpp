@@ -8,6 +8,7 @@
 #include "data_structures/stack.h"
 
 #include "algorithms/sortings.hpp"
+#include "algorithms/searchings.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -121,5 +122,29 @@ void MainWindow::on_quick_sort_test_button_clicked()
     print_container(arr, size);
     Sortings::quick_sort(arr, size);
     print_container(arr, size);
+    delete[] arr;
+}
+
+void MainWindow::on_linear_search_test_button_clicked()
+{
+    int* arr = new int[]{5, 2, 6, 1, 8, 2, 9, 11};
+    int size = 8;
+    print_container(arr, size);
+    int value = 6;
+    size_t index = Searchings::linear_search(arr, size, value);
+    qDebug() << "Index of first" << value << "=" << index;
+    delete[] arr;
+}
+
+void MainWindow::on_binary_search_test_button_clicked()
+{
+    int* arr = new int[]{5, 2, 6, 1, 8, 2, 9, 11};
+    int size = 8;
+    print_container(arr, size);
+    Sortings::quick_sort(arr, size);
+    print_container(arr, size);
+    int value = 5;
+    size_t index = Searchings::binary_search(arr, size, value);
+    qDebug() << value << "=" << index;
     delete[] arr;
 }

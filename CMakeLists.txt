@@ -47,6 +47,7 @@ else()
             data_structures/binary_tree.h data_structures/binary_tree.cpp
             data_structures/queue.h data_structures/queue.cpp
             algorithms/sortings.hpp
+            algorithms/searchings.hpp
         )
     endif()
 endif()

@@ -87,7 +87,10 @@ void Sortings::q_sort(T* arr, size_t begin, size_t end)
 template<typename T>
 void Sortings::quick_sort(T* arr, size_t size)
 {
-    q_sort(arr, 0, size - 1);
+    if (size > 0)
+    {
+        q_sort(arr, 0, size - 1);
+    }
 }
 template void Sortings::q_sort<int>(int* arr, size_t begin, size_t end);
 template void Sortings::quick_sort<int>(int* arr, size_t size);
