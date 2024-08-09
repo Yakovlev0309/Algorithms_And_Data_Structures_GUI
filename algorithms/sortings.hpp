@@ -35,7 +35,6 @@ void Sortings::bubble_sort(T* arr, size_t size)
         }
     }
 }
-template void Sortings::bubble_sort<int>(int* arr, size_t size);
 
 template <typename T>
 void Sortings::selection_sort(T* arr, size_t size)
@@ -56,7 +55,6 @@ void Sortings::selection_sort(T* arr, size_t size)
         }
     }
 }
-template void Sortings::selection_sort<int>(int* arr, size_t size);
 
 template <typename T>
 void Sortings::q_sort(T* arr, size_t begin, size_t end)
@@ -92,7 +90,5 @@ void Sortings::quick_sort(T* arr, size_t size)
         q_sort(arr, 0, size - 1);
     }
 }
-template void Sortings::q_sort<int>(int* arr, size_t begin, size_t end);
-template void Sortings::quick_sort<int>(int* arr, size_t size);
 
 #endif // SORTINGS_H

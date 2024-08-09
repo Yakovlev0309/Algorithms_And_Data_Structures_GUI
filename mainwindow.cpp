@@ -3,9 +3,9 @@
 
 #include <QDebug>
 
-#include "data_structures/linked_list.h"
-#include "data_structures/binary_tree.h"
-#include "data_structures/stack.h"
+#include "data_structures/linked_list.hpp"
+#include "data_structures/binary_tree.hpp"
+#include "data_structures/stack.hpp"
 
 #include "algorithms/sortings.hpp"
 #include "algorithms/searchings.hpp"

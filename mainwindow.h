@@ -19,19 +19,12 @@ public:
 
 private slots:
     void on_linked_list_test_button_clicked();
-
     void on_binary_tree_test_button_clicked();
-
     void on_stack_test_button_clicked();
-
     void on_bubble_sort_test_button_clicked();
-
     void on_selection_sort_test_button_clicked();
-
     void on_quick_sort_test_button_clicked();
-
     void on_linear_search_test_button_clicked();
-
     void on_binary_search_test_button_clicked();
 
 private:

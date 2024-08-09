@@ -42,10 +42,10 @@ else()
         add_executable(Algorithms_And_Data_Structures_GUI
             ${PROJECT_SOURCES}
 
-            data_structures/stack.h data_structures/stack.cpp
-            data_structures/linked_list.h data_structures/linked_list.cpp
-            data_structures/binary_tree.h data_structures/binary_tree.cpp
-            data_structures/queue.h data_structures/queue.cpp
+            data_structures/stack.hpp
+            data_structures/linked_list.hpp
+            data_structures/binary_tree.hpp
+            data_structures/queue.hpp
             algorithms/sortings.hpp
             algorithms/searchings.hpp
         )

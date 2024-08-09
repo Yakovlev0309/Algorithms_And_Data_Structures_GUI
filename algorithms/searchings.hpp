@@ -26,7 +26,6 @@ size_t Searchings::linear_search(T* arr, size_t size, T value)
     }
     return -1;
 }
-template size_t Searchings::linear_search<int>(int* arr, size_t size, int value);
 
 template <typename T>
 size_t Searchings::binary_search(T* arr, size_t size, T value)
@@ -57,6 +56,5 @@ size_t Searchings::binary_search(T* arr, size_t size, T value)
     }
     return -1;
 }
-template size_t Searchings::binary_search<int>(int* arr, size_t size, int value);
 
 #endif // SEARCHINGS_H
