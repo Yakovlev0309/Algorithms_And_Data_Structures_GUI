@@ -30,6 +30,8 @@ public:
     void append_before(LinkedListNode<T>* next, const T& value);
     void append_by_index(size_t index, const T& value);
 
+    // TODO добавить emplace'ы
+
     void remove_back();
     void remove_front();
 
@@ -39,6 +41,8 @@ public:
     bool is_empty() const { return sz > 0 ? false : true; };
     bool contains(const T& value) const;
     LinkedListNode<T>* head() const { return _head; }
+
+    T operator[](size_t index) const;
 
     T* to_array() const;
 
@@ -70,10 +74,7 @@ LinkedListNode<T>::LinkedListNode(const T& value, LinkedListNode<T>* next)
     this->next = next;
 }
 
-template class LinkedListNode<int>;
-template class LinkedListNode<float>;
-template class LinkedListNode<double>;
-template class LinkedListNode<std::string>;
+// ----------
 
 template <typename T>
 LinkedList<T>::LinkedList()
@@ -204,7 +205,7 @@ void LinkedList<T>::remove_back()
     if (sz > 0)
     {
         LinkedListNode<T>* current = _head;
-        for (size_t i = 0; i < sz - 1; ++i)
+        for (size_t i = 1; i < sz - 1; ++i)
         {
             current = current->next;
         }
@@ -256,7 +257,30 @@ bool LinkedList<T>::contains(const T &value) const
         }
         current = current->next;
     }
+    if (current->value == value)
+    {
+        return true;
+    }
     return false;
+}
+
+template<typename T>
+T LinkedList<T>::operator[](size_t index) const
+{
+    if (index < 0 || index > sz)
+    {
+        throw std::out_of_range("LinkedList index out of range.");
+    }
+
+    size_t i = 0;
+    LinkedListNode<T>* current = _head;
+    while (i < index)
+    {
+        current = current->next;
+        i++;
+    }
+
+    return current->value;
 }
 
 template <typename T>

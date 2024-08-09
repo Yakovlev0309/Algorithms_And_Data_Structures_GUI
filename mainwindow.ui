@@ -118,6 +118,19 @@
      <string>Binary search test</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="queue_test_button">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>320</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Queue test</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

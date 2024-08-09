@@ -3,9 +3,12 @@
 
 #include <QDebug>
 
+#include <typeinfo>
+
 #include "data_structures/linked_list.hpp"
 #include "data_structures/binary_tree.hpp"
 #include "data_structures/stack.hpp"
+#include "data_structures/queue.hpp"
 
 #include "algorithms/sortings.hpp"
 #include "algorithms/searchings.hpp"
@@ -49,6 +52,7 @@ void MainWindow::on_linked_list_test_button_clicked()
     print_container(l.to_array(), l.size());
     l.append_back(926535);
     print_container(l.to_array(), l.size(), typeid(l).name());
+    qDebug() << "element at index 2 =" << l[2];
     l.remove_back();
     print_container(l.to_array(), l.size(), typeid(l).name());
     qDebug() << "contains 3 =" << l.contains(3);
@@ -59,6 +63,7 @@ void MainWindow::on_linked_list_test_button_clicked()
 
 void MainWindow::on_binary_tree_test_button_clicked()
 {
+    // unique_lock<mutex> ul(console_mutex);
     BinaryTree<int> t;
     t.add_node(5);
     t.add_node(3);
@@ -67,8 +72,6 @@ void MainWindow::on_binary_tree_test_button_clicked()
     // print_container(t.to_array(), t.size(), typeid(t).name());
     t.print_nodes_preorder();
 }
-
-#include <typeinfo>
 
 void MainWindow::on_stack_test_button_clicked()
 {
@@ -79,8 +82,10 @@ void MainWindow::on_stack_test_button_clicked()
     s.push(4);
     s.push(5);
     qDebug() << "is empty =" << s.is_empty();
+
     print_container(s.to_array(), s.size(), typeid(s).name());
     qDebug() << "contains 5 =" << s.contains(5);
+
     s.pop();
     print_container(s.to_array(), s.size(), typeid(s).name());
     qDebug() << "contains 5 =" << s.contains(5);
@@ -90,9 +95,36 @@ void MainWindow::on_stack_test_button_clicked()
     {
         s.pop();
     }
-    qDebug() << "is empty =" << s.is_empty();
     print_container(s.to_array(), s.size(), (typeid(s).name()));
+    qDebug() << "is empty =" << s.is_empty();
     qDebug() << "top element =" << s.peek();
+}
+
+void MainWindow::on_queue_test_button_clicked()
+{
+    Queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+    qDebug() << "is empty =" << q.is_empty();
+
+    print_container(q.to_array(), q.size(), typeid(q).name());
+    qDebug() << "contains 5 =" << q.contains(5);
+
+    q.pop();
+    print_container(q.to_array(), q.size(), typeid(q).name());
+    qDebug() << "contains 5 =" << q.contains(5);
+    qDebug() << "top element =" << q.peek();
+
+    while (q.size() > 0)
+    {
+        q.pop();
+    }
+    print_container(q.to_array(), q.size(), (typeid(q).name()));
+    qDebug() << "is empty =" << q.is_empty();
+    qDebug() << "top element =" << q.peek();
 }
 
 void MainWindow::on_bubble_sort_test_button_clicked()
